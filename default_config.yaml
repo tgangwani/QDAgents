@@ -1,0 +1,27 @@
+# General
+num_iterations : 500
+max_grad_norm : 1.
+debug_mode : False
+
+# RL params
+num_steps : 2048
+ppo_epochs : 5
+policy_lr : 0.0001
+ppo_clip_param : 0.2
+value_loss_coef : 1.
+num_mini_batch : 32
+gamma : 0.99
+gae_lambda : 0.95
+
+# Self-imitation params
+si_wt : 0.      # weight on the self-imitation term in the policy-gradient
+num_pqs : 1
+pq_capacity : 10
+si_grad_steps : 4
+
+# QD params
+divergence : js
+temperature: 0.5     # {1.0 for kls, 0.5 for js}
+dre_type : nce      # {dice, nce}
+dice_type : value_dice   # {dual_dice, gen_dice, value_dice}
+svpg_expl_wt :      #  weight on the exploration term in SVPG (if None, then linear annealing is used)
